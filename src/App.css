@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+
+/* *{
+  background: #000;
+} */
+
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+@theme {
+  --font-DM: "DM Sans", sans-serif; 
+} 
