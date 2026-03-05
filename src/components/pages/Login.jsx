@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -8,6 +9,8 @@ import toast, { Toaster } from "react-hot-toast";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,6 +20,7 @@ const Login = () => {
         password,
       });
       toast.success(res.data.msg);
+      navigate("/profiecreate")
     } catch (err) {
       if (err.response) {
         toast.error(err.response.data.msg)

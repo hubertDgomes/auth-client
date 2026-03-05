@@ -7,6 +7,7 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
 import OtpVerify from "./components/pages/OtpVerify";
+import CreateProfile from "./components/pages/CreateProfile";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/otp" element={<OtpVerify/>}/>
+            <Route path="/profiecreate" element={<CreateProfile/>}/>
           </Route>
         </Routes>
       </div>
