@@ -6,7 +6,7 @@ const CreateProfile =  () => {
   const [data , setData] = useState([])
 
    useEffect(() => {
-  const res = axios.get("https://auth-backend-qvke.onrender.com/api/showuser", {
+  axios.get("https://auth-backend-qvke.onrender.com/api/showuser", {
     withCredentials: true
   })
   .then(data => setData(data.data))
