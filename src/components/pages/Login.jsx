@@ -3,31 +3,34 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-
-
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://auth-backend-qvke.onrender.com/api/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "http://localhost:3000/api/login",
+        {
+          email,
+          password,
+        },
+        {
+          withCredentials: true,
+        },
+      );
       toast.success(res.data.msg);
-      navigate("/profiecreate")
+      navigate("/profiecreate");
     } catch (err) {
       if (err.response) {
-        toast.error(err.response.data.msg)
+        toast.error(err.response.data.msg);
       } else if (err.request) {
-        toast.error("Server did not respond. Try again later.")
+        toast.error("Server did not respond. Try again later.");
       } else {
-        toast.error("Something went wrong!")
+        toast.error("Something went wrong!");
       }
     }
   };

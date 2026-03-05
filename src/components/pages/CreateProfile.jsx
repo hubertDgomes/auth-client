@@ -1,10 +1,27 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+
 
 const CreateProfile = () => {
+  const [data , setData] = useState([])
+
+  useEffect(() => {
+  axios.get("http://localhost:3000/api/showuser", {
+    withCredentials: true
+  })
+  .then(data => setData(data.data))
+}, [])
+
+  console.log(data);
+  
+
+
+
   return (
     <>
       <div className="absolute top-1/2 left-1/2 -translate-[50%] text-center font-DM">
-        <h1>This is profile pages</h1>
+        <h1 className="text-[40px]">Welcome <span className="font-bold">{data.name}</span></h1>
+        <p>Your Email : {data.email}</p>
       </div>
     </>
   );

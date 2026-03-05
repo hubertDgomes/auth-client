@@ -15,7 +15,7 @@ const Signup = () => {
   const handleSign = async (e) => {
     e.preventDefault()
     try{
-      const res = await axios.post("https://auth-backend-qvke.onrender.com/api/signup",{
+      const res = await axios.post("http://localhost:3000/api/signup",{
         name,
         email,
         password
