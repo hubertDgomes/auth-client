@@ -2,11 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 
-const CreateProfile = () => {
+const CreateProfile =  () => {
   const [data , setData] = useState([])
 
-  useEffect(() => {
-  axios.get("http://localhost:3000/api/showuser", {
+   useEffect(() => {
+  const res = axios.get("https://auth-backend-qvke.onrender.com/api/showuser", {
     withCredentials: true
   })
   .then(data => setData(data.data))
