@@ -22,7 +22,7 @@ const Login = () => {
           withCredentials: true,
         },
       );
-      toast.success(res.data.msg);
+      toast.success(res.msg);
       navigate("/profiecreate");
     } catch (err) {
       if (err.response) {
