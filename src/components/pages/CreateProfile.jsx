@@ -24,6 +24,7 @@ const CreateProfile = () => {
       .then((data) => setData(data.data));
   }, []);
 
+  console.log(data);  
 
   const handleUpdate = async (e) => {
     e.preventDefault();

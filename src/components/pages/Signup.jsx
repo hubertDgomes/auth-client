@@ -12,15 +12,15 @@ const Signup = () => {
 
   const navigate = useNavigate()
 
-  const handleSign = async (e) => {
+  const handleSign = (e) => {
     e.preventDefault()
     try{
       console.log("Sending signup request...");
-      const res = await axios.post("https://auth-backend-qvke.onrender.com/api/signup",{
+      const res = axios.post("https://auth-backend-qvke.onrender.com/api/signup",{
         name,
         email,
         password
-      })
+      },{withCredentials : true})
       toast.success(`If ${email} is valid, then check your email inbox to verify the OTP.`);
       navigate("/otp" , {state : {email}})
     }
