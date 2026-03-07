@@ -19,11 +19,15 @@ const Signup = () => {
         name,
         email,
         password
+      },
+      {
+        withCredentials: true,
       })
       toast.success(`If ${email} is valid, then check your email inbox to verify the OTP.`);
       navigate("/otp" , {state : {email}})
     }
     catch(err){
+      console.error("Signup error:", err);
       if (err.response) {
         toast.error(err.response.data.msg)
       } else if (err.request) {
