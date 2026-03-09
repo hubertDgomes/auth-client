@@ -9,7 +9,7 @@ const Notes = () => {
     // console.log(note);
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/notes",
+        "https://auth-backend-qvke.onrender.com/api/notes",
         { notes },
         { withCredentials: true },
       );

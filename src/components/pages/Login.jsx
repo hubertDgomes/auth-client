@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/login",
+        "https://auth-backend-qvke.onrender.com/api/login",
         {
           email,
           password,

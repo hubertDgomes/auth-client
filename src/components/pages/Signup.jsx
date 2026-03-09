@@ -14,7 +14,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const res = axios.post(
-        "http://localhost:3000/api/signup",
+        "https://auth-backend-qvke.onrender.com/api/signup",
         {
           name,
           email,

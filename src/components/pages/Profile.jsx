@@ -6,7 +6,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/getprofile", {
+      .get("https://auth-backend-qvke.onrender.com/api/getprofile", {
         withCredentials: true,
       })
       .then((res) => setData(res.data))
