@@ -6,14 +6,14 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get("https://auth-backend-qvke.onrender.com/api/getprofile", {
+      .get("http://localhost:3000/api/getprofile", {
         withCredentials: true,
       })
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   if (!data) return;
   <div className="absolute top-1/2 left-1/2 -translate-[50%] text-center font-DM">
