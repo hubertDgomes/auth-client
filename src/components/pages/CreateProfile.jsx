@@ -17,7 +17,7 @@ const CreateProfile = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/showuser", {
+      .get("https://auth-backend-qvke.onrender.com/api/showuser", {
         withCredentials: true,
       })
       .then((data) => setData(data.data));
@@ -29,7 +29,7 @@ const CreateProfile = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/profile",
+        "https://auth-backend-qvke.onrender.com/api/profile",
         {
           bio,
           number,
